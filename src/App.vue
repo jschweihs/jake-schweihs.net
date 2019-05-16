@@ -18,12 +18,16 @@
       </div>
 
       <div class="bio">
-        
+        <div class="greeting">
+          <h2>Hi, I'm Jake. Nice to meet you.</h2>
+          <p>I have worn a few hats in my day including affiliate marketer, 3D artist and animator, and now full time developer, and more.  Regardless of the job, I always find myself happiest when I can fulfill my own creativity and help others succeed. Let's talk about what I can to do help you grow your business and achieve your goals!</p>
+        </div>
       </div>
 
 
-      <div class="bordered">
-
+      <div class="skill-container">
+        <div class="skills">
+        </div>
       </div>
 
     </div>
@@ -66,7 +70,7 @@ h1,h2,h3,h4,h5,h6 {
   padding: 20px;
 
 }
-h1 {
+h1, h2 {
   font-family: 'Fjalla One', sans-serif;
 }
 
@@ -77,7 +81,7 @@ h1 {
 
 .hero {
   width: 100%;
-  padding: 20px 0 40px;
+  padding: 20px 0 140px;
 }
 
 .hero-icon {
@@ -89,31 +93,7 @@ h1 {
   margin: 0 auto;
 }
 
-/* BIO */
-.bio {
-  display: block;
-  width: 100%;
-  height: 600px;
-  background-color: #4040ff;
-}
-
-.bio:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    background: white;
-    transform-origin: top right;
-    -ms-transform: skew(85deg, 0deg);
-    -webkit-transform: skew(85deg, 0deg);
-    transform: skew(85deg, 0deg);
-    backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-}
-
+/* ROLLER */
 .roller {
   width: 80px; 
   height: 80px;
@@ -121,8 +101,10 @@ h1 {
   z-index: 10;
   border-radius: 50%;
   background-color: black;
-  -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
-  animation: roll-ball 5s infinite;
+  /*-webkit-animation: roll-ball 5s infinite; /* Safari 4.0 - 8.0 */
+  animation-name: rollball;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
   animation-timing-function: linear;
   border: 16px solid #666;
 }
@@ -137,6 +119,17 @@ h1 {
   border: 10px solid #eee;
   z-index: 100;
   position: absolute;
+}
+
+@keyframes rollball {
+  from {
+    left: -120px;
+    top: 665px;
+  }
+  to {
+    left: calc(100% + 40px);
+    top: calc((.08748866 * (100vw + 140px) ) + 665px);
+  }
 }
 
 .spoke {
@@ -162,27 +155,16 @@ h1 {
   animation-timing-function: linear;
 } 
 
-@-webkit-keyframes roll-ball {
+/*@-webkit-keyframes rollball {
   from {
     left: -120px;
-    top: 565px;
+    top: 665px;
   }
   to {
     left: calc(100% + 40px);
-    top: 690px;
+     top: calc((.08748866 * (100vw + 140px) ) + 665px);
   }
-}
-
-@keyframes roll-ball {
-  from {
-    left: -120px;
-    top: 565px;
-  }
-  to {
-    left: calc(100% + 40px);
-    top: 690px;
-  }
-}
+}*/
 
 @keyframes rotate-ball {
   from {
@@ -220,14 +202,57 @@ h1 {
   }
 }
 
-.bordered {
-  width: 992px;
+/* BIO */
+.bio {
+  display: block;
+  width: 100%;
+  height: 600px;
+  background-image: linear-gradient(#3030bf, #406dff);
+}
+
+.bio:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transform-origin: top right;
+  -ms-transform: skew(85deg, 0deg);
+  -webkit-transform: skew(85deg, 0deg);
+  transform: skew(85deg, 0deg);
+  backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.greeting {
+  text-align: center;
+  color: white;
+  margin: -400px auto 0;
+  max-width: 600px;
+}
+
+.greeting h2 {
+  font-size: 32px;
+}
+
+.greeting p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.skill-container {
+  padding: 20px;
+}
+
+.skills {
+  max-width: 992px;
   height: 400px;
   margin: -60px auto 0;
   z-index: 1;
   left: calc((100% - 992px) / 2);
   background-color: white;
-  border: 4px solid #d0d0ff;
+  border: 1px solid #d0d0ff;
   border-radius: 20px;
 }
 
