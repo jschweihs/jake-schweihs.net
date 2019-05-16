@@ -51,7 +51,7 @@
     }
     .nav-header {
         display: block;
-        padding: 20px 0;
+        padding: 20px;
     }
 
     .logo {
@@ -68,7 +68,7 @@
     .nav-links {
         
         display: inline-block;
-        margin-left: 60px;
+        margin-left: 40px;
     }
 
     .nav-list {
