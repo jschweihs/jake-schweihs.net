@@ -8,15 +8,7 @@
         </div>
       </div>
 
-
-      <div class="roller">
-        <div class="spoke"/>
-        <div class="spoke"/>
-        <div class="spoke"/>
-        <div class="spoke"/>
-        <div class="roller-ct"/>
-      </div>
-
+      <jeep/>
       <div class="bio">
         <div class="greeting">
           <h2>Hi, I'm Jake. Nice to meet you.</h2>
@@ -38,11 +30,13 @@
 
 <script>
 // JAVASCRIPT SECTION
-import NavBar from './components/nav/NavBar.vue';
+import Jeep     from './components/jeep/Jeep.vue';
+import NavBar   from './components/nav/NavBar.vue';
 
 export default {
   name: 'app',
   components: {
+    Jeep,
     NavBar
   },
   data () {
@@ -93,115 +87,6 @@ h1, h2 {
   margin: 0 auto;
 }
 
-/* ROLLER */
-.roller {
-  width: 80px; 
-  height: 80px;
-  position: absolute;
-  z-index: 10;
-  border-radius: 50%;
-  background-color: black;
-  /*-webkit-animation: roll-ball 5s infinite; /* Safari 4.0 - 8.0 */
-  animation-name: rollball;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  border: 16px solid #666;
-}
-
-.roller-ct {
-  width: 40px;
-  height: 40px;
-  left: 12.5%;
-  margin-top: 10px;
-  border-radius: 50%;
-  background-color: #ccc;
-  border: 10px solid #eee;
-  z-index: 100;
-  position: absolute;
-}
-
-@keyframes rollball {
-  from {
-    left: -120px;
-    top: 665px;
-  }
-  to {
-    left: calc(100% + 40px);
-    top: calc((.08748866 * (100vw + 140px) ) + 665px);
-  }
-}
-
-.spoke {
-  width: 12px;
-  height: 80px;
-  position: absolute;
-  left: 35px;
-  background-color: #ccc;
-  animation: rotate-ball 2.5s infinite;
-  animation-timing-function: linear;
-}
-
-.spoke:nth-child(2) {
-  animation: rotate-ball2 2.5s infinite;
-  animation-timing-function: linear;
-} 
-.spoke:nth-child(3) {
-  animation: rotate-ball3 2.5s infinite;
-  animation-timing-function: linear;
-} 
-.spoke:nth-child(4) {
-  animation: rotate-ball4 2.5s infinite;
-  animation-timing-function: linear;
-} 
-
-/*@-webkit-keyframes rollball {
-  from {
-    left: -120px;
-    top: 665px;
-  }
-  to {
-    left: calc(100% + 40px);
-     top: calc((.08748866 * (100vw + 140px) ) + 665px);
-  }
-}*/
-
-@keyframes rotate-ball {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
-
-@keyframes rotate-ball2 {
-  from {
-    transform: rotate(45deg);
-  }
-  to {
-    transform: rotate(404deg);
-  }
-}
-
-@keyframes rotate-ball3 {
-  from {
-    transform: rotate(90deg);
-  }
-  to {
-    transform: rotate(449deg);
-  }
-}
-
-@keyframes rotate-ball4 {
-  from {
-    transform: rotate(135deg);
-  }
-  to {
-    transform: rotate(494deg);
-  }
-}
-
 /* BIO */
 .bio {
   display: block;
@@ -223,6 +108,8 @@ h1, h2 {
   backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  position: absoute;
+  z-index: -100;
 }
 
 .greeting {
